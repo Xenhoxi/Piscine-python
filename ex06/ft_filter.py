@@ -1,2 +1,2 @@
-def ft_filter():
-    pass
+def ft_filter(func, iterable):
+    print(filter.__doc__)
