@@ -1,6 +1,5 @@
 from load_image import ft_load
 
-import time
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -11,9 +10,10 @@ def main():
     sy = 400
     h = 400
     w = 400
-    img_1 = img_1[sx:sx + h, sy:sy + w]
-    print(f"New shape after slicing: {np.shape(img_1)}")
-    plt.imshow(img_1, cmap='gray')
+    new = img_1[sx:sx + h, sy:sy + w]
+    print(f"New shape after slicing: {new.shape + (1,)} or {new.shape}")
+    print(new.reshape(new.shape + (1,)))
+    plt.imshow(new, cmap='gray')
     plt.show()
 
 
