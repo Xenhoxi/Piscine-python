@@ -1,5 +1,6 @@
 from load_csv import load
 import matplotlib.pyplot as plt
+from matplotlib.ticker import EngFormatter
 import numpy as np
 
 def to_integers(x):
@@ -18,8 +19,10 @@ def main():
 	try:
 		data = load("../population_total.csv")
 		data.set_index('country', inplace=True)
-		data.loc['Yemen'].apply(to_integers).plot(label='Yemen')
-		data.loc['France'].apply(to_integers).plot(label='France')
+		Yemen = data.loc['Yemen'].apply(to_integers).plot(label='Yemen')
+		France = data.loc['France'].apply(to_integers).plot(label='France')
+		Yemen.yaxis.set_major_formatter(EngFormatter())
+		France.yaxis.set_major_formatter(EngFormatter())
 		plt.title("Population Projections")
 		plt.xlabel("Year")
 		plt.ylabel("Population")
