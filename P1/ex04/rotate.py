@@ -10,13 +10,16 @@ def main():
     sy = 400
     h = 400
     w = 400
-    new = img_1[sx:sx + h, sy:sy + w, 0]
-    print(f"The shape of image is: {new.shape + (1,)} or {new.shape}")
-    print(new.reshape((-1, 1)))
-    new = np.transpose(new)
-    print(f"New shape after Transpose: {new.shape}")
-    print(new)
-    plt.imshow(new, cmap='gray')
+    zoomed = img_1[sx:sx + h, sy:sy + w, 0]
+    print(f"The shape of image is: {zoomed.shape + (1,)} or {zoomed.shape}")
+    print(zoomed.reshape((-1, 1)))
+    rotated = np.copy(zoomed.reshape(zoomed.shape[1], zoomed.shape[0]))
+    for x in range(zoomed.shape[0]):
+        for y in range(zoomed.shape[1]):
+            rotated[y, x] = zoomed[x, y]
+    print(f"New shape after Transpose: {rotated.shape}")
+    print(rotated)
+    plt.imshow(rotated, cmap='gray')
     plt.show()
 
 

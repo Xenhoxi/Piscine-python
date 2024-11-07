@@ -1,4 +1,4 @@
-#!/Users/ljerinec/Desktop/Code/42/Piscine_python/env/bin/python3.10
+#!/home/ljerinec/Desktop/Python/env/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
 import sys

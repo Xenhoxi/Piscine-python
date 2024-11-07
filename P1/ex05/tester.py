@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 array = ft_load("landscape.jpg")
-plt.figure(figsize=(10,8))
+plt.figure(figsize=(10, 8))
 plt.subplot(3, 2, 1)
 plt.imshow(array)
 
@@ -22,6 +22,6 @@ plt.subplot(3, 2, 5)
 plt.imshow(ft_blue(array))
 
 plt.subplot(3, 2, 6)
-plt.imshow(ft_grey(array))
+plt.imshow(ft_grey(array), cmap='gray')
 plt.show()
 print(ft_invert.__doc__)
