@@ -4,6 +4,7 @@ from matplotlib.ticker import EngFormatter
 
 
 def to_integers(x):
+    """Transform abbreviated numerals to integers"""
     if x.endswith('k'):
         x = float(x[:-1]) * 1_000
     elif x.endswith('M'):
