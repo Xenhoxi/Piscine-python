@@ -1,12 +1,12 @@
 from load_csv import load
 import matplotlib.pyplot as plt
 from matplotlib.ticker import EngFormatter
-import numpy as np
 
 
 def main():
     try:
-        income = load("../data_csv/income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
+        d = "income_per_person_gdppercapita_ppp_inflation_adjusted.csv"
+        income = load(d)
         population = load("../data_csv/life_expectancy_years.csv")
         if income is None or population is None:
             return
