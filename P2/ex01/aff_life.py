@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 
 def main():
     try:
-        data = load("../life_expectancy_years.csv")
+        data = load("../data_csv/life_expectancy_years.csv")
+        if data is None:
+            return
         data.set_index('country', inplace=True)
         data.loc['France'].plot()
         plt.title("France Life expectancy Projections")

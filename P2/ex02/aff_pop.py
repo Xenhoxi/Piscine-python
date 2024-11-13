@@ -19,6 +19,8 @@ def to_integers(x):
 def main():
     try:
         data = load("../data_csv/population_total.csv")
+        if data is None:
+            return
         data.set_index('country', inplace=True)
         Yemen = data.loc['Yemen'][:-50]
         Yemen = Yemen.apply(to_integers).plot(label='Yemen')

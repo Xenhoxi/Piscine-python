@@ -1,3 +1,6 @@
+import math
+
+
 def ft_statistics(*args: any, **kwargs: any) -> None:
     func_list = [ft_mean, ft_median, ft_quartile, ft_std, ft_var]
     word_list = ["mean", "median", "quartile", "std", "var"]
@@ -36,7 +39,12 @@ def ft_quartile(args):
 
 
 def ft_std(args):
-    print(args)
+    mean = sum(args) / len(args)
+    res = 0
+    for i in args:
+        res += (mean - i) ** 2
+    res = math.sqrt(res / (len(args)))
+    print("std :", res)
 
 
 def ft_var(args):

@@ -11,7 +11,7 @@ class Baratheon(Character):
 		self.hairs = "dark"
 
 	def __str__(self):
-		return self
+		return (f"Vector: {(self.family_name, self.hairs, self.eyes)}")
 	
 	def __repr__(self):
 		return (f"Vector: {(self.family_name, self.hairs, self.eyes)}")
