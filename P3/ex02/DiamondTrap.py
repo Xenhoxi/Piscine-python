@@ -3,6 +3,7 @@ from S1E7 import Baratheon, Lannister
 
 class King(Baratheon, Lannister):
     def __init__(self, first_name):
+        """Construcor of the king"""
         super().__init__(first_name)
 
     def set_eyes(self, new_eyes):

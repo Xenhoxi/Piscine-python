@@ -2,6 +2,7 @@ import math
 
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """Display statistics depending of the keywords argument."""
     func_list = [ft_mean, ft_median, ft_quartile, ft_std, ft_var]
     word_list = ["mean", "median", "quartile", "std", "var"]
     for kwarg in kwargs.values():
@@ -14,10 +15,12 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
 
 
 def ft_mean(args):
+    """Display the mean of args"""
     print("ft_mean", sum(args) / len(args))
 
 
 def ft_median(args):
+    """Display the median of args"""
     nbs = list(args)
     nbs.sort()
     if len(args) % 2 == 0 and len(args) > 2:
@@ -29,6 +32,7 @@ def ft_median(args):
 
 
 def ft_quartile(args):
+    """Display the quartile of args"""
     nbs = list(args)
     nbs.sort()
     i1 = round((len(nbs) + 3) / 4)
@@ -39,6 +43,7 @@ def ft_quartile(args):
 
 
 def ft_std(args):
+    """Display the standart deviation of args"""
     mean = sum(args) / len(args)
     res = 0
     for i in args:
@@ -48,6 +53,7 @@ def ft_std(args):
 
 
 def ft_var(args):
+    """Display variations of args"""
     mean = sum(args) / len(args)
     res = 0
     for i in args:

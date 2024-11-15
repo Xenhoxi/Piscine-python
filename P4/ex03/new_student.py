@@ -4,11 +4,13 @@ from dataclasses import dataclass, field
 
 
 def generate_id() -> str:
+    """Create a random generated id"""
     return "".join(random.choices(string.ascii_lowercase, k=15))
 
 
 @dataclass
 class Student:
+    """Create a student, with the args passed at the creation"""
     name: str
     surname: str
     active: bool = field(default=True)

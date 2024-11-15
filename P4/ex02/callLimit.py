@@ -1,11 +1,12 @@
 def callLimit(limit: int):
+    """Decorator, limit the numbers of time\
+that the funciton will be called"""
     count = 0
 
     def callLimiter(function):
 
         def limit_function(*args: any, **kwds: any):
             nonlocal count
-            # print(f"Count: {count}, Limite {limit}")
             if count < limit:
                 count += 1
                 return function()
