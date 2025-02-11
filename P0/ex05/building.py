@@ -9,39 +9,20 @@ characters, punctuation characters, digits and spaces."""
         assert len(sys.argv) < 3, "Wrong numbers of arguments"
         string = ''
         if len(sys.argv) == 1:
-            print('What is the text to count?')
-            string = input()
+            print("What is the text to count?")
+            string = sys.stdin.readline()
+            if not string.endswith("\n"):
+                print("")
         else:
             string = sys.argv[1]
         print(f"The text contains {len(string)} characters:")
-        print(f"{len(list(filter(isUpper, string)))} upper letters")
-        print(f"{len(list(filter(isLower, string)))} lower letters")
+        print(f"{sum(1 for c in string if c.isupper())} upper letters")
+        print(f"{sum(1 for c in string if c.islower())} lower letters")
         print(f"{len(list(filter(isPonctuation, string)))} ponctuation marks")
-        print(f"{string.count(' ')} spaces")
-        print(f"{len(list(filter(isDigit, string)))} digits")
+        print(sum(1 for c in string if c.isspace()), "spaces")
+        print(f"{sum(1 for c in string if c.isdigit())} digits")
     except (AssertionError, Exception, KeyboardInterrupt) as msg:
         print(msg)
-
-
-def isUpper(char):
-    """Return true if the param is uppercase"""
-    if char >= 'A' and char <= 'Z':
-        return True
-    return False
-
-
-def isLower(char):
-    """Return true if the param is lowercase"""
-    if char >= 'a' and char <= 'z':
-        return True
-    return False
-
-
-def isDigit(char):
-    """Return true if the param is a digit"""
-    if char >= '0' and char <= '9':
-        return True
-    return False
 
 
 def isPonctuation(char):

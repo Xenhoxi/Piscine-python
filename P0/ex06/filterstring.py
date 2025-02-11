@@ -10,14 +10,14 @@ than N."""
         assert all(
             c.isalnum() or c.isspace() for c in sys.argv[1]
             ), "the arguments are bad"
-        assert sys.argv[2].isdigit(), "the argument are bad"
+        assert sys.argv[2].isdigit(), "the arguments are bad"
         S = sys.argv[1]
         N = int(sys.argv[2])
-        print(
-            list(ft_filter(lambda S: True if len(S) > N else False, S.split()))
-            )
+        result = ft_filter(lambda S: True if len(S) > N else False, S.split())
+        for i in result:
+            print(i)
     except (AssertionError, KeyboardInterrupt) as error:
-        print(error)
+        print("Assertion Error:", error)
 
 
 if __name__ == "__main__":
