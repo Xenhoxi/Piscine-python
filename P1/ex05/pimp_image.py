@@ -1,4 +1,3 @@
-from skimage.color import rgb2gray
 import numpy as np
 
 
@@ -37,5 +36,8 @@ def ft_blue(array) -> np.array:
 def ft_grey(array) -> np.array:
     """Tranform color image to grayscale image"""
     img = np.copy(array)
-    img = rgb2gray(img)
-    return img
+    r = img[:, :, 0]
+    grey = np.zeros_like(r, dtype=float)
+    grey = img[:, :, 1]
+    print(grey.shape)
+    return grey

@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -9,3 +9,4 @@ def ft_load(path: str) -> np.array:
         return img
     except (FileNotFoundError, AttributeError, Exception) as Error:
         print(Error)
+        return (None)

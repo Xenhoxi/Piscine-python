@@ -7,6 +7,7 @@ family = [
     [2.10, 98.5],
     [1.88, 75.2]
     ]
+
 try:
     print(slice_me(family, 0, 2))
     print(slice_me(family, 1, -2))

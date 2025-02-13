@@ -2,9 +2,7 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
-    assert all(
-        isinstance(x, list) for x in family
-        ), "Arguments have to be type"
+    assert isinstance(family, list), "Arguments have to be type list"
     array = np.array(family)
     new_array = array[start:end]
     print(f"My shape is : {array.shape}")
